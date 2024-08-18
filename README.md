@@ -19,6 +19,4 @@ Si ingresas la palabra **"hola"**, el encriptador la transformará en **"hoberla
 
 ## Instrucciones de Uso
 
-1. Clona el repositorio en tu máquina local.
-   ```bash
-   git clone https://github.com/tu-usuario/encriptador-texto.git
+Este código utilizalo como apoyo y mejorarlo con tus ideas propias, no para plagiar.
