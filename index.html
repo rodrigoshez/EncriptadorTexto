@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="icon type" href="./imagenes/icon.png">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="./assets/logo.svg" alt="Logo Alura Latam" class="logo">
+        <h1>Encriptador de texto</h1>
+    </header>
+    <main>
+        <section class="seccion-izquierda">
+            <textarea class="area-texto" placeholder="Ingrese el texto aquí" cols="30" rows="10"></textarea>
+            <div class="advertencia">
+                <img src="./assets/exclamacion.svg" alt="Ícono de advertencia">
+                <h6>Sólo letras minúsculas y sin tildes.</h6>
+            </div>
+            <div class="botones">
+                <button class = "boton-encriptar" onclick = "botonEncriptar()">Encriptar</button>
+                <button class = "boton-desencriptar" onclick = "botonDesencriptar()">Desencriptar</button>
+            </div>
+            <span id="mensaje-error" class="mensaje-error"></span>
+        </section>
+        <section class="seccion-derecha">
+            <div class="ocultar">
+                <img src="./assets/muneco.svg" alt="Un muñeco con una lupa" class="munieco">
+                <h2>Ningún mensaje fue encontrado:</h2>
+                <p>Ingrese el texto que desea encriptar o desencriptar.</p>
+            </div>
+            <div class="contenedor-derecho">
+                <textarea cols="30" rows="10" class="texto-procesado"></textarea>
+                <div class="copiar">
+                    <button class = "boton-copiar" onclick = "copiar()">Copiar</button>
+                    <span id="mensaje-confirmacion" class="mensaje-confirmacion"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Desarrollado por Rodrigo Sanchez Corona</p>
+        <div class="redes">
+            Grupo 7. Programa ONE,  Oracle Next Education.
+        </div>           
+    </footer>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>

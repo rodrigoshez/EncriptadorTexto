@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --fuente-primaria: "Raleway", sans-serif;
+    --fuente-secundaria: "Inter", sans-serif; 
+    --backround-cl: #e6f7fe;
+    --color-primario: #0A3871;
+    --color-secundario: #ffffff;
+    --color-terciario: #495057;
+    --color-error: #FF0000;
+    }
+
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+
+body {
+    color: var(--color-primario);
+    font-family: var(--fuente-primaria);
+    background-color: var(--backround-cl);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    padding: 1rem 0 0 1rem;
+    justify-content: left;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+.logo {
+    margin: 0 0 0 4.5%;
+    width: 2%;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 2rem;
+    padding: 3%;
+    gap: 2%;
+}
+
+.seccion-izquierda, .seccion-derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 50%;
+    position: relative;
+}
+
+.area-texto {
+    background-color: var(--backround-cl);
+    border: none;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    resize: none;
+    border-radius: 20px;
+    padding: 2.5%;
+}
+
+.texto-procesado {
+    background-color: var(--color-secundario);
+    border: none;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    resize: none;
+    border-radius: 20px;
+    padding: 2.5%;
+    box-shadow: 0 4px 8px #000000;
+}
+
+::placeholder {font-family: var(--fuente-secundaria);}
+    .area-texto:focus, .texto-procesado:focus {
+        outline: none;
+    }
+
+.advertencia {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: var(--color-terciario);
+    font-family: var(--fuente-secundaria);
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 100%;
+    width: 100%;
+}
+
+.ocultar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 24px;
+    padding: 2%;
+    text-align: center;
+    box-shadow: 0 4px 8px #000000;
+    z-index: 10; /* Asegura que "ocultar" tape el área de texto "mensaje". */
+
+}
+
+.contenedor-derecho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.texto-procesado, .copiar {
+    position: relative;
+    z-index: 1; /* Asegura que estos elementos estén debajo de "ocultar". */
+}
+
+.hidden {
+    display: none;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+.boton-encriptar {
+    background-color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    border-radius: 24px;
+    color: var(--color-secundario);
+    cursor: pointer;
+    height: 4rem;
+    width: 18rem;
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color. */
+}
+
+.boton-desencriptar {
+    background-color: var(--backround-cl);
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+    border-radius: 24px;
+    cursor: pointer;
+    height: 4rem;
+    width: 18rem;
+    transition: background-color 0.3s ease;
+}
+
+.copiar {
+    margin: 9% 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-copiar {
+    background-color: var(--backround-cl);
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+    border-radius: 24px;
+    cursor: pointer;
+    height: 4rem;
+    width: 18rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton-encriptar:hover, .boton-desencriptar:hover, .boton-copiar:hover {
+    box-shadow: 0 4px 8px #000000;
+    transform: scale(1.05);
+    opacity: 0.8;
+    filter: brightness(1.2);
+}
+
+.mensaje-confirmacion, .mensaje-error {
+    display: inline-block;
+    visibility: visible;
+    text-align: center;
+    font-family: var(--fuente-secundaria);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.mensaje-confirmacion {
+    color: var(--color-terciario);
+    margin: 6% 0 0 0;
+}
+
+.mensaje-error {
+    color: var(--color-error);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0 0 0;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--color-primario);
+    font-weight: 600;
+    position: relative;
+    bottom: 0;
+    flex-shrink: 0;
+    color: var(--color-secundario);
+}
+
+.footer img {
+    width: 2.5rem;
+}
+
+@media (max-width:1500px) {
+    .boton-encriptar, .boton-desencriptar, .boton-copiar {
+        width: 16rem;
+    }
+}
+
+@media(max-width:1200px) {
+    .boton-encriptar, .boton-desencriptar, .boton-copiar {
+        width: 14rem;
+    }    
+}
+
+@media (max-width:1024px) {
+
+    main {
+        gap: 5%;
+    }
+
+    .header {
+        gap: 2.5rem;
+    }
+
+    .logo {
+        width: 3.5%;
+    }
+
+    .botones {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boton-encriptar, .boton-desencriptar, .boton-copiar {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 920px) {
+
+    body {
+        padding: 0 1% 0 1%;
+    }
+    main {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .seccion-izquierda, .seccion-derecha {
+        width: 100%;
+    }
+
+    .copiar {
+        width: 100%;
+    }
+    .boton-encriptar, .boton-desencriptar, .boton-copiar {
+        width: 100%;
+    }
+
+    .ocultar img {
+        width: 50%;
+    }
+    
+    .footer {
+        margin-top: 5rem;
+    }
+}
